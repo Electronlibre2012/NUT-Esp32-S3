@@ -30,7 +30,9 @@ This branch is made for UPS with USB-HID driver like CyberPower CP1500.
 9-Check the logs and you can see the wifi connection and com ok with green and blue led
 
 10-Go to HA, dowload NUT integration https://www.home-assistant.io/integrations/nut
+
 11-Add your UPS with IP adress (static is a must ) and port : standard is 3493
+
 12-Nice, you have your UPS in HA! ENJOY
 
 
