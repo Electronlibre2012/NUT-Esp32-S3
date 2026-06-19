@@ -7,9 +7,11 @@ This branch is made for UPS with USB-HID driver like CyberPower CP1500.
 
 1-Install esp-idf-v5.5.3 in C:  (windows11). cd C:\Espressif\frameworks\esp-idf-v5.5.3. mkdir nut. cd nut.
 
-2-git clone or copy and paste all file in the main branch to "nut" folder or whatever you name it.
+2-Launc esp-idf with POWERSHELL
 
-3-modify personnal info and adapt name to your config : 
+3-git clone or copy and paste all file in the main branch to "nut" folder or whatever you name it.
+
+4-modify personnal info and adapt name to your config : 
 
 - \fatfs\usr\local\etc\nut
 
@@ -17,11 +19,9 @@ This branch is made for UPS with USB-HID driver like CyberPower CP1500.
 
 - \src\wifi.c : line 18 SSID, line 19 passwd wifi, 21 wifi channel
 
-4-Dependancy for onboard LED : idf.py add-dependency "espressif/led_strip^2.0.0"
+5-Dependancy for onboard LED : idf.py add-dependency "espressif/led_strip^2.0.0"
 
-5-Clean : idf.py fullclean
-
-6-Build : idf.py build
+6-Clean : idf.py fullclean / then Build : idf.py build
 
 7-Flash : idf.py -p COM8 flash monitor (COM PORT adapt to your USB port)
 
