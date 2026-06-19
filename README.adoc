@@ -6,14 +6,20 @@ UPS management protocol Informational RFC 9271 published by IETF at https://www.
 This branch is made for UPS with USB-HID driver like CyberPower CP1500.
 
 1-git clone or copy and paste all file in the main branch.
+
 2-modify personnal info and adapt name to your config : 
   - \fatfs\usr\local\etc\nut
   - \src\main.c : line 90 (driver name), 130 (passwd), 154 (ip addr, let 0.0.0.0 by default), 171 (name of your UPS)
   - \src\wifi.c : line 18 SSID, line 19 passwd wifi, 21 wifi channel
+
 3-Install Espressif IDF
+
 4-CD to your the "nut" directory
+
 5-Clean : idf.py fullclean
+
 6-Build : idf.py build
+
 7-Flash : idf.py -p COM8 flash monitor
 
 
