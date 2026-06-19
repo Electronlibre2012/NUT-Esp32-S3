@@ -5,25 +5,33 @@ UPS management protocol Informational RFC 9271 published by IETF at https://www.
 
 This branch is made for UPS with USB-HID driver like CyberPower CP1500.
 
-Only work with a ESP32-S3-N16R8, i use the devkit version : YD-ESP32-S3 2022-V1.3 with a LED WS2812 on board.
+1-Install esp-idf-v5.5.3 in C:  (windows11). cd C:\Espressif\frameworks\esp-idf-v5.5.3. mkdir nut. cd nut.
 
-Chip ESP32 up, use the left USB to connect to UPS and right USB to power it up.
-Make sur the 0 Ohm resistor is solder right-next to the led, if not, make a solder blob to activate.
+2-git clone or copy and paste all file in the main branch to "nut" folder or whatever you name it.
 
-RED color : start : wifi negociation
-GREEN color : WIFI is connected
-BLUE color : UPS (and USB) communication work. BLUE is normal operation.
+3-modify personnal info and adapt name to your config : 
 
-1-git clone or copy and paste all file in the main branch.
-2-modify personnal info and adapt name to your config : 
-  - \fatfs\usr\local\etc\nut
-  - \src\main.c : line 90 (driver name), 130 (passwd), 154 (ip addr, let 0.0.0.0 by default), 171 (name of your UPS), 222 (name of your UPS again)
-  - \src\wifi.c : line 18 SSID, line 19 passwd wifi, 21 wifi channel
-3-Install Espressif IDF
-4-CD to your the "nut" directory
+- \fatfs\usr\local\etc\nut
+
+- \src\main.c : line 90 (driver name), 130 (passwd), 154 (ip addr, let 0.0.0.0 by default), 171 (name of your UPS)
+
+- \src\wifi.c : line 18 SSID, line 19 passwd wifi, 21 wifi channel
+
+4-Dependancy for onboard LED : idf.py add-dependency "espressif/led_strip^2.0.0"
+
 5-Clean : idf.py fullclean
+
 6-Build : idf.py build
-7-Flash : idf.py -p COM8 flash monitor
+
+7-Flash : idf.py -p COM8 flash monitor (COM PORT adapt to your USB port)
+
+8-Check the logs and you can see the wifi connection and com ok with green and then blue led
+
+9-Go to HA, dowload NUT integration https://www.home-assistant.io/integrations/nut
+
+10-Add your UPS with IP adress (static is a must ) and port : standard is 3493
+
+11-Nice, you have your UPS in HA! ENJOY
 
 
 Description
