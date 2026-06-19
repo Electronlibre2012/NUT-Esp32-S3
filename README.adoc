@@ -19,11 +19,19 @@ This branch is made for UPS with USB-HID driver like CyberPower CP1500.
 
 4-CD to your the "nut" directory
 
-5-Clean : idf.py fullclean
+5-Dependancy for onboard LED : idf.py add-dependency "espressif/led_strip^2.0.0"
 
-6-Build : idf.py build
+6-Clean : idf.py fullclean
 
-7-Flash : idf.py -p COM8 flash monitor
+7-Build : idf.py build
+
+8-Flash : idf.py -p COM8 flash monitor (COM PORT adapt to your USB port)
+
+9-Check the logs and you can see the wifi connection and com ok with green and blue led
+
+10-Go to HA, dowload NUT integration https://www.home-assistant.io/integrations/nut
+11-Add your UPS with IP adress (static is a must ) and port : standard is 3493
+12-Nice, you have your UPS in HA! ENJOY
 
 
 Description
