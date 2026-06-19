@@ -1,0 +1,8 @@
+[nut]
+  password = Lavieestbelle
+  actions = SET
+  instcmds = ALL
+
+[monuser]
+  password = pass
+  upsmon primary
